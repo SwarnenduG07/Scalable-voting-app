@@ -4,13 +4,13 @@ import { useState } from "react"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import { useMutation } from"@tanstack/react-query"
-import { creatTopic } from "@/app/actions"
+import { createTopic } from "@/app/actions"
 
 const TopicCreator = () => {
     const[input, setInput] = useState<string>("")
 
     const {mutate, error, isPending} = useMutation({
-        mutationFn: creatTopic    
+        mutationFn: createTopic   
     })
 
     return ( 

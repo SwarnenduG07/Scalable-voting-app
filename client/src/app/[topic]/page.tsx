@@ -3,10 +3,9 @@
 import { redis } from "@/lib/redis"
 import ClientPage from "./ClientPage"
 
-
 interface PageProps {
   params: {
-    topic: string 
+    topic: string
   }
 }
 
@@ -34,7 +33,7 @@ const Page = async ({ params }: PageProps) => {
   }
 
   await redis.incr("served-requests")
-//@ts-ignore
+
   return <ClientPage initialData={words} topicName={topic} />
 }
 
